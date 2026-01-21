@@ -1,4 +1,7 @@
 .build/
+.cache/
 polymorphism
 fire
 abstract
+interface
+compile_commands.json
