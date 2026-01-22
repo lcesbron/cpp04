@@ -17,6 +17,19 @@
 # define ZOO_SIZE 4
 #endif
 
+static void	testDeepCopy(void)
+{
+	Cat*	c = new Cat();
+	Cat*	ccopy = new Cat(*c);
+	Dog*	d = new Dog();
+	Dog*	dcopy = new Dog(*d);
+
+	delete c;
+	delete d;
+	delete ccopy;
+	delete dcopy;
+}
+
 static void	fill_zoo(Animal **zoo)
 {
 	for (size_t i = 0; i < ZOO_SIZE; i++)
@@ -40,6 +53,7 @@ int	main(void)
 {
 	Animal*	zoo[ZOO_SIZE];
 
+	testDeepCopy();
 	fill_zoo(zoo);
 	sing(zoo);
 	for (size_t i = 0; i < ZOO_SIZE; i++)
