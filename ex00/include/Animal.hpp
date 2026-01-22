@@ -23,8 +23,8 @@ class Animal
 		Animal(void);
 		Animal(Animal const &toCopy);
 		Animal	&operator=(Animal const &toCopy);
-		~Animal(void);
-		virtual void	makeSound(void);
+		virtual ~Animal(void);
+		virtual void	makeSound(void) const;
 };
 
 #endif

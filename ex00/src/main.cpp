@@ -10,16 +10,65 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+
+static void	testEachAnimal(void)
+{
+	Animal		a;
+	Dog			d;
+	Cat			c;
+	WrongAnimal	w;
+	WrongCat	wc;
+
+	a.makeSound();
+	d.makeSound();
+	c.makeSound();
+	w.makeSound();
+	wc.makeSound();
+}
+
+static void	testPolymorphism(void)
+{
+	Animal*	zoo[3];
+
+	zoo[0] = new Animal();
+	zoo[1] = new Dog();
+	zoo[2] = new Cat();
+
+	for (int i = 0; i < 3; i++)
+	{
+		zoo[i]->makeSound();
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		delete zoo[i];
+	}
+}
+
+static void	testWrongPolymorphism(void)
+{
+	WrongAnimal*	zoo[2];
+
+	zoo[0] = new WrongAnimal();
+	zoo[1] = new WrongCat();
+
+	for (int i = 0; i < 2; i++)
+	{
+		zoo[i]->makeSound();
+	}
+	for (int i = 0; i < 2; i++)
+	{
+		delete zoo[i];
+	}
+}
 
 int	main(void)
 {
-	Animal	bob;
-	Cat		linux;
-	Dog		rex;
-
-	bob.makeSound();
-	linux.makeSound();
-	rex.makeSound();
+	testEachAnimal();
+	testPolymorphism();
+	testWrongPolymorphism();
 }

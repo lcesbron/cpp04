@@ -10,33 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-Animal::Animal(void)
+WrongAnimal::WrongAnimal(void)
 {
-	this->type = "default_animal";
-	std::cout << "Animal " << this->type << " constructor called" << std::endl;
+	this->type = "default_Wronganimal";
+	std::cout << "WrongAnimal " << this->type << " constructor called" << std::endl;
 }
 
-Animal::Animal(Animal const &toCopy)
+WrongAnimal::WrongAnimal(WrongAnimal const &toCopy)
 {
 	this->type = toCopy.type;
-	std::cout << "Animal " << this->type << " copy constructor called" << std::endl;
+	std::cout << "WrongAnimal " << this->type << " copy constructor called" << std::endl;
 }
 
-Animal::~Animal(void)
+WrongAnimal::~WrongAnimal(void)
 {
-	std::cout << "Animal " << this->type << " destructor called" << std::endl;
+	std::cout << "WrongAnimal " << this->type << " destructor called" << std::endl;
 }
 
-Animal	&Animal::operator=(Animal const &toCopy)
+WrongAnimal	&WrongAnimal::operator=(WrongAnimal const &toCopy)
 {
 	this->type = toCopy.type;
-	std::cout << "Animal " << this->type << " = operator overload called" << std::endl;
+	std::cout << "WrongAnimal " << this->type << " = operator overload called" << std::endl;
 	return (*this);
 }
 
-void	Animal::makeSound(void) const
+void	WrongAnimal::makeSound(void) const
 {
-	std::cout << "AAAAAAAAAAAA" << std::endl;
+	std::cout << "WWWWWWWWWWWWWWWW" << std::endl;
 }

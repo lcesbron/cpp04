@@ -36,7 +36,7 @@ Dog	&Dog::operator=(Dog const &toCopy)
 	return (*this);
 }
 
-void	Dog::makeSound(void)
+void	Dog::makeSound(void) const
 {
 	std::cout << "woof" << std::endl;
 }

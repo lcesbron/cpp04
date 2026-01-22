@@ -22,7 +22,7 @@ class Cat: public Animal
 		Cat(Cat const &toCopy);
 		Cat	&operator=(Cat const &toCopy);
 		~Cat(void);
-		virtual void	makeSound(void);
+		virtual void	makeSound(void) const;
 };
 
 #endif

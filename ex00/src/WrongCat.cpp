@@ -10,33 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat(void)
+WrongCat::WrongCat(void)
 {
-	this->type = "Cat";
-	std::cout << "Cat " << this->type << " constructor called" << std::endl;
+	this->type = "WrongCat";
+	std::cout << "WrongCat " << this->type << " constructor called" << std::endl;
 }
 
-Cat::Cat(Cat const &toCopy)
+WrongCat::WrongCat(WrongCat const &toCopy)
 {
 	this->type = toCopy.type;
-	std::cout << "Cat " << this->type << " copy constructor called" << std::endl;
+	std::cout << "WrongCat " << this->type << " copy constructor called" << std::endl;
 }
 
-Cat::~Cat(void)
+WrongCat::~WrongCat(void)
 {
-	std::cout << "Cat " << this->type << " destructor called" << std::endl;
+	std::cout << "WrongCat " << this->type << " destructor called" << std::endl;
 }
 
-Cat	&Cat::operator=(Cat const &toCopy)
+WrongCat	&WrongCat::operator=(WrongCat const &toCopy)
 {
 	this->type = toCopy.type;
-	std::cout << "Cat " << this->type << " = operator overload called" << std::endl;
+	std::cout << "WrongCat " << this->type << " = operator overload called" << std::endl;
 	return (*this);
 }
 
-void	Cat::makeSound(void) const
+void	WrongCat::makeSound(void) const
 {
-	std::cout << "meow" << std::endl;
+	std::cout << "wwwww meow" << std::endl;
 }
