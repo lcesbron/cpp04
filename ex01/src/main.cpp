@@ -12,7 +12,6 @@
 
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include <iostream>
 
 #ifndef ZOO_SIZE
 # define ZOO_SIZE 4
