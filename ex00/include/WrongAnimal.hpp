@@ -13,7 +13,7 @@
 #ifndef WRONGANIMAL_HPP
 # define WRONGANIMAL_HPP
 
-# include <iostream>
+# include <string>
 
 class WrongAnimal
 {
@@ -23,7 +23,7 @@ class WrongAnimal
 		WrongAnimal(void);
 		WrongAnimal(WrongAnimal const &toCopy);
 		WrongAnimal	&operator=(WrongAnimal const &toCopy);
-		virtual ~WrongAnimal(void);
+		~WrongAnimal(void);
 		void	makeSound(void) const;
 };
 
