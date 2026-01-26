@@ -12,7 +12,7 @@
 
 #include "Brain.hpp"
 #include <algorithm>
-#include <string>
+#include <iostream>
 
 Brain::Brain(void)
 {

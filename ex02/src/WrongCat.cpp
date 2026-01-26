@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
+#include <iostream>
 
 WrongCat::WrongCat(void)
 {
