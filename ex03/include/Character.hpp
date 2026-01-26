@@ -27,12 +27,16 @@ class Character: public ICharacter
 		Character(std::string name);
 		Character(Character const & toCopy);
 		virtual ~Character();
+
 		Character	&operator=(Character const & toCopy);
+
 		virtual std::string const & getName() const;
-		virtual void equip(AMateria* m);
-		virtual void unequip(int idx);
-		AMateria*	unequipSavePointer(int idx);
-		virtual void use(int idx, ICharacter& target);
+
+		bool			isInInv(AMateria* m) const;
+		virtual void	equip(AMateria* m);
+		virtual void	unequip(int idx);
+		AMateria*		unequipSavePointer(int idx);
+		virtual void	use(int idx, ICharacter& target);
 };
 
 #endif

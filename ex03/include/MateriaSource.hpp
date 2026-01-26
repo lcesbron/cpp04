@@ -25,7 +25,10 @@ class MateriaSource: public IMateriaSource
 		MateriaSource(void);
 		MateriaSource(MateriaSource const & toCopy);
 		virtual ~MateriaSource();
+
 		MateriaSource		&operator=(MateriaSource const & toCopy);
+
+		bool			isInInv(AMateria* m) const;
 		virtual void		learnMateria(AMateria*);
 		virtual AMateria*	createMateria(std::string const & type);
 };

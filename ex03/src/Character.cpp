@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "Character.hpp"
+#include "AMateria.hpp"
+#include <iostream>
+#include <ostream>
 
 Character::Character(void)
 {
@@ -37,10 +40,9 @@ Character::Character(Character const & toCopy)
 
 Character::~Character(void)
 {
-	while (this->slot_ >= 1)
+	for (int i = 0; i < this->slot_; i++)
 	{
-		delete this->inv_[slot_ - 1];
-		--this->slot_;
+		delete this->inv_[i];
 	}
 }
 
@@ -70,6 +72,11 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
+	if (this->isInInv(m))
+	{
+		std::cout << "Character : " << this->name_ << " already equiped materia " << m->getType() << " " << m << std::endl;
+		return ;
+	}
 	if (this->slot_ <= 3)
 	{
 		this->inv_[slot_] = m;
@@ -105,4 +112,16 @@ AMateria*	Character::unequipSavePointer(int idx)
 void Character::use(int idx, ICharacter& target)
 {
 	this->inv_[idx]->use(target);
+}
+
+bool	Character::isInInv(AMateria* m) const
+{
+	for (int i = 0; i < this->slot_; i++)
+	{
+		if (this->inv_[i] == m)
+		{
+			return (true);
+		}
+	}
+	return (false);
 }

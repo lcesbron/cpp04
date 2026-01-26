@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+#include <iostream>
 
 AMateria::AMateria(void)
 {

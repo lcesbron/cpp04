@@ -29,10 +29,9 @@ MateriaSource::MateriaSource(MateriaSource const & toCopy)
 
 MateriaSource::~MateriaSource(void)
 {
-	while (this->slot_ >= 1)
+	for (int i = 0; i < this->slot_; i++)
 	{
-		delete this->inv_[slot_ - 1];
-		--this->slot_;
+		delete this->inv_[i];
 	}
 }
 
@@ -50,6 +49,10 @@ MateriaSource		&MateriaSource::operator=(MateriaSource const & toCopy)
 
 void		MateriaSource::learnMateria(AMateria* toLearn)
 {
+	if (this->isInInv(toLearn))
+	{
+		return ;
+	}
 	if (this->slot_ < 4)
 	{
 		this->inv_[slot_] = toLearn;
@@ -65,4 +68,16 @@ AMateria*	MateriaSource::createMateria(std::string const & type)
 			return (this->inv_[i]->clone());
 	}
 	return (NULL);
+}
+
+bool			MateriaSource::isInInv(AMateria* m) const
+{
+	for (int i = 0; i < this->slot_; i++)
+	{
+		if (this->inv_[i] == m)
+		{
+			return (true);
+		}
+	}
+	return (false);
 }

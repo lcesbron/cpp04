@@ -10,10 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AMateria.hpp"
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "MateriaSource.hpp"
 #include "Character.hpp"
+#include <iostream>
 
 static void printHeader(std::string const & title)
 {
@@ -302,6 +304,18 @@ static void testPolymorphism()
 	delete src;
 }
 
+static void	testMultiEquip()
+{
+	printHeader("MultiEquip");
+
+	Character		c;
+	MateriaSource	ms;
+	AMateria*		tool = new Ice();
+
+	c.equip(tool);
+	c.equip(tool);
+}
+
 int main()
 {
 	subjectTest();
@@ -320,6 +334,8 @@ int main()
 	testCharacterAssignment();
 
 	testPolymorphism();
+
+	testMultiEquip();
 
 	std::cout << std::endl << "========================================"  << std::endl;
 	std::cout << "  ALL TESTS COMPLETED" << std::endl;
