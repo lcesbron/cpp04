@@ -12,6 +12,7 @@
 
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include <iostream>
 
 #ifndef ZOO_SIZE
 # define ZOO_SIZE 4
@@ -28,6 +29,14 @@ static void	testDeepCopy(void)
 	delete d;
 	delete ccopy;
 	delete dcopy;
+}
+
+static void testAssignementOperator(void)
+{
+	Cat	c;
+	Cat	c2;
+
+	c2 = c;
 }
 
 static void	fill_zoo(Animal **zoo)
@@ -54,6 +63,7 @@ int	main(void)
 	Animal*	zoo[ZOO_SIZE];
 
 	testDeepCopy();
+	testAssignementOperator();
 	fill_zoo(zoo);
 	sing(zoo);
 	for (size_t i = 0; i < ZOO_SIZE; i++)
